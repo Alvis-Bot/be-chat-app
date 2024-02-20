@@ -21,6 +21,7 @@ export class Group extends AuditEntity{
     @JoinColumn()
     creator: User;
 
+
     @OneToOne(() => User, { createForeignKeyConstraints: false })
     @JoinColumn()
     owner: User;

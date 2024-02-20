@@ -11,6 +11,7 @@ import {
     UploadedFiles,
     UseGuards
 } from '@nestjs/common';
+
 import { Routers } from '../common/enum/routers.enum';
 import { UsersService } from './users.service';
 import { UserCreateDto } from '../common/dto/user-create.dto';
@@ -32,12 +33,14 @@ import {ApiException} from "../exception/api.exception";
 import {ErrorCode} from "../exception/error.code";
 import {diskStorage} from "multer";
 import {Response} from "express";
+import {ConfigService} from "@nestjs/config";
 @Controller(Routers.USERS)
 @UseGuards(JwtAuthGuard)
 export class UsersController {
   constructor(
     // private readonly authService: AuthService,
     @Inject(Services.USERS) private readonly usersService: UsersService,
+      private configService: ConfigService
   ) {}
 
 

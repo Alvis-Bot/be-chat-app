@@ -7,7 +7,4 @@ export class GroupMessage extends BaseMessage {
     @ManyToOne(() => Group, (group) => group.messages)
     group: Group;
 
-    // @OneToMany(() => GroupMessageAttachment, (attachment) => attachment.message)
-    // @JoinColumn()
-    // attachments?: MessageAttachment[];
 }

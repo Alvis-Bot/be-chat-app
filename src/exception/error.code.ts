@@ -7,8 +7,9 @@ interface IError {
 }
 
 interface IErrorCode {
+	CANT_NOT_DELETE_FRIEND: IError;
     IMAGE_NOT_FOUND: IError;
-	FRIENDS_NOT_FOUND: IError;
+	FRIEND_NOT_FOUND: IError;
 	NOT_DELETE_MESSAGE: IError;
     MESSAGE_NOT_FOUND: IError;
     FILE_TYPE_NOT_MATCHING: IError;
@@ -129,15 +130,20 @@ export const ErrorCode :IErrorCode  = {
 		status: HttpStatus.FORBIDDEN,
 		code: "NOT_DELETE_MESSAGE",
 	},
-	FRIENDS_NOT_FOUND: {
-		message: "Friends not found",
+	FRIEND_NOT_FOUND: {
+		message: "Friend not found",
 		status: HttpStatus.NOT_FOUND,
-		code: "FRIENDS_NOT_FOUND",
+		code: "FRIEND_NOT_FOUND",
 	},
 	IMAGE_NOT_FOUND: {
 		message: "Image not found",
 		status: HttpStatus.NOT_FOUND,
 		code: "IMAGE_NOT_FOUND",
+	},
+	CANT_NOT_DELETE_FRIEND: {
+		message: "Can't not delete friend",
+		status: HttpStatus.BAD_REQUEST,
+		code: "CANT_NOT_DELETE_FRIEND",
 	}
 
 };

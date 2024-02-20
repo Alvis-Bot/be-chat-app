@@ -14,6 +14,11 @@ export type FindParticipantParams = Partial< {
     id : number;
 }>
 
+export type RemoveFriendEventPayload = {
+    friend: Friend;
+    userId: number;
+};
+
 export interface AuthenticatedRequest extends Request {
     user: User
 }
